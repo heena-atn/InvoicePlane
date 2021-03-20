@@ -1,3 +1,4 @@
+<div class="page-container">
 <?php
 $cv = $this->controller->view_data['custom_values'];
 ?>
@@ -22,9 +23,7 @@ $cv = $this->controller->view_data['custom_values'];
     </div>
 
     <div id="content">
-
         <?php $this->layout->load_view('layout/alerts'); ?>
-
         <input class="hidden" name="is_update" type="hidden"
             <?php if ($this->mdl_clients->form_value('is_update')) {
                 echo 'value="1"';
@@ -33,14 +32,16 @@ $cv = $this->controller->view_data['custom_values'];
             } ?>
         >
 
-        <div class="row">
+       <div class="main-content bgc-grey-100">
+       <div id='mainContent'>
+        <div class="row mt-3">
             <div class="col-xs-12 col-sm-6">
 
-                <div class="panel panel-default">
-                    <div class="panel-heading form-inline clearfix">
+                <div class="panel panel-default bgc-white p-20 bd">
+                    <div class="panel-heading">
                         <?php _trans('personal_information'); ?>
 
-                        <div class="pull-right">
+                        <div class="pull-right action-right">
                             <label for="client_active" class="control-label">
                                 <?php _trans('active_client'); ?>
                                 <input id="client_active" name="client_active" type="checkbox" value="1"
@@ -53,7 +54,7 @@ $cv = $this->controller->view_data['custom_values'];
                         </div>
                     </div>
 
-                    <div class="panel-body">
+                    <div class="mT-30">
 
                         <div class="form-group">
                             <label for="client_name">
@@ -97,9 +98,11 @@ $cv = $this->controller->view_data['custom_values'];
             </div>
         </div>
 
-        <div class="row">
-            <div class="col-xs-12 col-sm-6">
-                <div class="panel panel-default">
+
+        <div class="row mt-3">
+            <div class="col-xs-12 col-sm-6 ">
+            
+            <div class="panel panel-default bgc-white p-20 bd">
 
                     <div class="panel-heading">
                         <?php _trans('address'); ?>
@@ -180,7 +183,7 @@ $cv = $this->controller->view_data['custom_values'];
             </div>
             <div class="col-xs-12 col-sm-6">
 
-                <div class="panel panel-default">
+                <div class="panel panel-default bgc-white p-20 bd">
 
                     <div class="panel-heading">
                         <?php _trans('contact_information'); ?>
@@ -246,10 +249,10 @@ $cv = $this->controller->view_data['custom_values'];
             </div>
         </div>
 
-        <div class="row">
+        <div class="row mt-3">
             <div class="col-xs-12 col-sm-6">
 
-                <div class="panel panel-default">
+                <div class="panel panel-default bgc-white p-20 bd">
 
                     <div class="panel-heading">
                         <?php _trans('personal_information'); ?>
@@ -343,7 +346,7 @@ $cv = $this->controller->view_data['custom_values'];
             </div>
             <div class="col-xs-12 col-sm-6">
 
-                <div class="panel panel-default">
+                <div class="panel panel-default bgc-white p-20 bd">
                     <div class="panel-heading">
                         <?php _trans('tax_information'); ?>
                     </div>
@@ -381,10 +384,10 @@ $cv = $this->controller->view_data['custom_values'];
             </div>
         </div>
         <?php if ($custom_fields): ?>
-            <div class="row">
+            <div class="row mt-3">
                 <div class="col-xs-12 col-md-6">
 
-                    <div class="panel panel-default">
+                    <div class="panel panel-default bgc-white p-20 bd">
 
                         <div class="panel-heading">
                             <?php _trans('custom_fields'); ?>
@@ -404,5 +407,19 @@ $cv = $this->controller->view_data['custom_values'];
                 </div>
             </div>
         <?php endif; ?>
+
+        <div class="row mt-3">
+            <div class="col-xs-12 col-sm-6">
+               <button id="btn-submit" name="btn_submit" class="btn btn-success ajax-loader" value="1">
+                <i class="fa fa-check"></i> <?php _trans('save'); ?>
+            </button>
+            </div>
+        </div>
+        </div>
+
+        
+       
+                  
     </div>
 </form>
+</div>

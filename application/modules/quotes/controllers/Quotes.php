@@ -31,6 +31,13 @@ class Quotes extends Admin_Controller
         redirect('quotes/status/all');
     }
 
+     public function form()
+    {
+        // Display all quotes by default
+         $this->layout->buffer('content', 'quotes/form');
+        $this->layout->render();
+    }
+
     /**
      * @param string $status
      * @param int $page

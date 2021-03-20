@@ -1,3 +1,5 @@
+
+<div class="page-container">
 <div id="headerbar">
     <h1 class="headerbar-title"><?php _trans('tasks'); ?></h1>
 
@@ -7,32 +9,42 @@
         </a>
     </div>
 
-    <div class="headerbar-item pull-right">
-        <?php echo pager(site_url('tasks/index'), 'mdl_tasks'); ?>
-    </div>
 
 </div>
 
-<div id="content" class="table-content">
 
-    <?php $this->layout->load_view('layout/alerts'); ?>
 
-    <div class="table-responsive">
-        <table class="table table-hover table-striped">
-
-            <thead>
-            <tr>
-                <th><?php _trans('status'); ?></th>
-                <th><?php _trans('task_name'); ?></th>
-                <th><?php _trans('task_finish_date'); ?></th>
-                <th><?php _trans('project'); ?></th>
-                <th><?php _trans('task_price'); ?></th>
-                <th><?php _trans('options'); ?></th>
-            </tr>
-            </thead>
-
-            <tbody>
-            <?php foreach ($tasks as $task) { ?>
+<main class="bgc-grey-100">
+               <div id="mainContent">
+                  <div class="container-fluid">
+                    
+                     <div class="row">
+                        <div class="col-md-12">
+                           <div class="bgc-white bd bdrs-3 p-20 mB-20">
+                             
+                              <table id="dataTable" class="table table-striped table-bordered" cellspacing="0" width="100%">
+                                 <thead>
+                                   <tr>
+                                         <th><?php _trans('status'); ?></th>
+                                        <th><?php _trans('task_name'); ?></th>
+                                        <th><?php _trans('task_finish_date'); ?></th>
+                                        <th><?php _trans('project'); ?></th>
+                                        <th><?php _trans('task_price'); ?></th>
+                                        <th><?php _trans('options'); ?></th>
+                                    </tr>
+                                 </thead>
+                                 <tfoot>
+                                    <tr>
+                                             <th><?php _trans('status'); ?></th>
+                                            <th><?php _trans('task_name'); ?></th>
+                                            <th><?php _trans('task_finish_date'); ?></th>
+                                            <th><?php _trans('project'); ?></th>
+                                            <th><?php _trans('task_price'); ?></th>
+                                            <th><?php _trans('options'); ?></th>
+                                    </tr>
+                                 </tfoot>
+                                 <tbody>
+                               <?php foreach ($tasks as $task) { ?>
                 <tr>
                     <td>
                         <span class="label <?php echo $task_statuses["$task->task_status"]['class']; ?>">
@@ -62,7 +74,7 @@
                             <ul class="dropdown-menu">
                                 <li>
                                     <a href="<?php echo site_url('tasks/form/' . $task->task_id); ?>"
-                                       title="<?php _trans('edit'); ?>">
+                                       title="<?php _trans('edit'); ?>" class="icon_margin">
                                         <i class="fa fa-edit fa-margin"></i> <?php _trans('edit'); ?>
                                     </a>
                                 </li>
@@ -71,7 +83,7 @@
                                         <form action="<?php echo site_url('tasks/delete/' . $task->task_id); ?>"
                                               method="POST">
                                             <?php _csrf_field(); ?>
-                                            <button type="submit" class="dropdown-button"
+                                            <button type="submit" class="dropdown-button icon_margin"
                                                     onclick="return confirm('<?php echo $task->task_status == 4 ? trans('alert_task_delete') : trans('delete_record_warning') ?>');">
                                                 <i class="fa fa-trash-o fa-margin"></i> <?php _trans('delete'); ?>
                                             </button>
@@ -84,10 +96,15 @@
                     </td>
                 </tr>
             <?php } ?>
-            </tbody>
+                                 </tbody>
+                              </table>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </main>
 
-        </table>
 
-    </div>
 
-</div>
+                                </div>

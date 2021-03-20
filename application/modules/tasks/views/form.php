@@ -9,7 +9,7 @@ if ($this->mdl_tasks->form_value('task_id') && $this->mdl_tasks->form_value('tas
         });
     </script>
 <?php endif ?>
-
+<div class="page-container">
 <form method="post" id="task-form">
 
     <input type="hidden" name="<?php echo $this->config->item('csrf_token_name'); ?>"
@@ -135,3 +135,4 @@ if ($this->mdl_tasks->form_value('task_id') && $this->mdl_tasks->form_value('tas
     </div>
 
 </form>
+                                </div>

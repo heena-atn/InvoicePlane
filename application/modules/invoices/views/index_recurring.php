@@ -1,32 +1,46 @@
+<div class="page-container">
 <div id="headerbar">
     <h1 class="headerbar-title"><?php _trans('recurring_invoices'); ?></h1>
 
-    <div class="headerbar-item pull-right">
-        <?php echo pager(site_url('invoices/recurring/index'), 'mdl_invoices_recurring'); ?>
-    </div>
+    
 </div>
 
-<div id="content" class="table-content">
 
-    <div id="filter_results">
-        <div class="table-responsive">
-            <table class="table table-striped">
-
-                <thead>
-                <tr>
-                    <th><?php _trans('status'); ?></th>
-                    <th><?php _trans('base_invoice'); ?></th>
-                    <th><?php _trans('client'); ?></th>
-                    <th><?php _trans('start_date'); ?></th>
-                    <th><?php _trans('end_date'); ?></th>
-                    <th><?php _trans('every'); ?></th>
-                    <th><?php _trans('next_date'); ?></th>
-                    <th><?php _trans('options'); ?></th>
-                </tr>
-                </thead>
-
-                <tbody>
-                <?php foreach ($recurring_invoices as $invoice) { ?>
+<main class="bgc-grey-100">
+               <div id="mainContent">
+                  <div class="container-fluid">
+                    
+                     <div class="row">
+                        <div class="col-md-12">
+                           <div class="bgc-white bd bdrs-3 p-20 mB-20">
+                             
+                              <table id="dataTable" class="table table-striped table-bordered" cellspacing="0" width="100%">
+                                 <thead>
+                                   <tr>
+                                        <th><?php _trans('status'); ?></th>
+                                        <th><?php _trans('base_invoice'); ?></th>
+                                        <th><?php _trans('client'); ?></th>
+                                        <th><?php _trans('start_date'); ?></th>
+                                        <th><?php _trans('end_date'); ?></th>
+                                        <th><?php _trans('every'); ?></th>
+                                        <th><?php _trans('next_date'); ?></th>
+                                        <th><?php _trans('options'); ?></th>
+                                    </tr>
+                                 </thead>
+                                 <tfoot>
+                                    <tr>
+                                            <th><?php _trans('status'); ?></th>
+                                            <th><?php _trans('base_invoice'); ?></th>
+                                            <th><?php _trans('client'); ?></th>
+                                            <th><?php _trans('start_date'); ?></th>
+                                            <th><?php _trans('end_date'); ?></th>
+                                            <th><?php _trans('every'); ?></th>
+                                            <th><?php _trans('next_date'); ?></th>
+                                            <th><?php _trans('options'); ?></th>
+                                    </tr>
+                                 </tfoot>
+                                 <tbody>
+                                    <?php foreach ($recurring_invoices as $invoice) { ?>
                     <tr>
                         <td>
                         <span class="label
@@ -65,7 +79,7 @@
                                 </a>
                                 <ul class="dropdown-menu">
                                     <li>
-                                        <a href="<?php echo site_url('invoices/recurring/stop/' . $invoice->invoice_recurring_id); ?>">
+                                        <a href="<?php echo site_url('invoices/recurring/stop/' . $invoice->invoice_recurring_id); ?>" class="icon_margin">
                                             <i class="fa fa-ban fa-margin"></i> <?php _trans('stop'); ?>
                                         </a>
                                     </li>
@@ -73,7 +87,7 @@
                                         <form action="<?php echo site_url('invoices/recurring/delete/' . $invoice->invoice_recurring_id); ?>"
                                               method="POST">
                                             <?php _csrf_field(); ?>
-                                            <button type="submit" class="dropdown-button"
+                                            <button type="submit" class="dropdown-button icon_margin"
                                                     onclick="return confirm('<?php _trans('delete_invoice_warning'); ?>');">
                                                 <i class="fa fa-trash-o fa-margin"></i> <?php _trans('delete'); ?>
                                             </button>
@@ -84,10 +98,13 @@
                         </td>
                     </tr>
                 <?php } ?>
-                </tbody>
-
-            </table>
-        </div>
-    </div>
+                                 </tbody>
+                              </table>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </main>
 
 </div>

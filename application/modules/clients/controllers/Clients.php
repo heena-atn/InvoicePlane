@@ -29,6 +29,8 @@ class Clients extends Admin_Controller
     {
         // Display active clients by default
         redirect('clients/status/active');
+        // $this->layout->buffer('content', 'clients/index');
+        // $this->layout->render();
     }
 
     /**

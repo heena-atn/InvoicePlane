@@ -191,7 +191,7 @@ if ($this->config->item('disable_read_only') == true) {
     $invoice->is_read_only = 0;
 }
 ?>
-
+<div class="page-container">
 <div id="headerbar">
     <h1 class="headerbar-title">
         <?php
@@ -568,3 +568,4 @@ if ($this->config->item('disable_read_only') == true) {
 </div>
 
 <?php $this->layout->load_view('upload/dropzone-invoice-scripts'); ?>
+                                            </div>

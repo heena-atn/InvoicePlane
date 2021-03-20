@@ -40,7 +40,7 @@
                             </a>
                             <ul class="dropdown-menu">
                                 <li>
-                                    <a href="<?php echo site_url('payment_methods/form/' . $payment_method->payment_method_id); ?>">
+                                    <a href="<?php echo site_url('payment_methods/form/' . $payment_method->payment_method_id); ?>" class="icon_margin">
                                         <i class="fa fa-edit fa-margin"></i>
                                         <?php _trans('edit'); ?>
                                     </a>
@@ -49,7 +49,7 @@
                                     <form action="<?php echo site_url('payment_methods/delete/' . $payment_method->payment_method_id); ?>"
                                           method="POST">
                                         <?php _csrf_field(); ?>
-                                        <button type="submit" class="dropdown-button"
+                                        <button type="submit" class="dropdown-button icon_margin"
                                                 onclick="return confirm('<?php _trans('delete_record_warning'); ?>');">
                                             <i class="fa fa-trash-o fa-margin"></i> <?php _trans('delete'); ?>
                                         </button>

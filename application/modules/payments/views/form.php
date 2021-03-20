@@ -21,7 +21,7 @@
 
     });
 </script>
-
+<div class="page-container">
 <form method="post" class="form-horizontal">
 
     <input type="hidden" name="<?php echo $this->config->item('csrf_token_name'); ?>"
@@ -137,3 +137,4 @@
     </div>
 
 </form>
+    </div>

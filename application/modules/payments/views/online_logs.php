@@ -1,34 +1,43 @@
+<div class="page-container">
 <div id="headerbar">
     <h1 class="headerbar-title"><?php _trans('payment_logs'); ?></h1>
-
-    <div class="headerbar-item pull-right">
-        <?php echo pager(site_url('payments/online_logs'), 'mdl_payments'); ?>
-    </div>
-
 </div>
 
-<div id="content" class="table-content">
 
-    <?php $this->layout->load_view('layout/alerts'); ?>
 
-    <div id="filter_results">
-        <div class="table-responsive">
-            <table class="table table-hover table-striped">
-
-                <thead>
-                <tr>
-                    <th><?php _trans('payment_date'); ?></th>
-                    <th><?php _trans('invoice'); ?></th>
-                    <th><?php _trans('transaction_successful'); ?></th>
-                    <th><?php _trans('payment_date'); ?></th>
-                    <th><?php _trans('payment_provider'); ?></th>
-                    <th><?php _trans('provider_response'); ?></th>
-                    <th><?php _trans('transaction_reference'); ?></th>
-                </tr>
-                </thead>
-
-                <tbody>
-                <?php foreach ($payment_logs as $log) { ?>
+<main class="bgc-grey-100">
+               <div id="mainContent">
+                  <div class="container-fluid">
+                    
+                     <div class="row">
+                        <div class="col-md-12">
+                           <div class="bgc-white bd bdrs-3 p-20 mB-20">
+                             
+                              <table id="dataTable" class="table table-striped table-bordered" cellspacing="0" width="100%">
+                                 <thead>
+                                   <tr>
+                                        <th><?php _trans('payment_date'); ?></th>
+                                        <th><?php _trans('invoice'); ?></th>
+                                        <th><?php _trans('transaction_successful'); ?></th>
+                                        <th><?php _trans('payment_date'); ?></th>
+                                        <th><?php _trans('payment_provider'); ?></th>
+                                        <th><?php _trans('provider_response'); ?></th>
+                                        <th><?php _trans('transaction_reference'); ?></th>
+                                    </tr>
+                                 </thead>
+                                 <tfoot>
+                                    <tr>
+                                             <th><?php _trans('payment_date'); ?></th>
+                                            <th><?php _trans('invoice'); ?></th>
+                                            <th><?php _trans('transaction_successful'); ?></th>
+                                            <th><?php _trans('payment_date'); ?></th>
+                                            <th><?php _trans('payment_provider'); ?></th>
+                                            <th><?php _trans('provider_response'); ?></th>
+                                            <th><?php _trans('transaction_reference'); ?></th>
+                                    </tr>
+                                 </tfoot>
+                                 <tbody>
+                                   <?php foreach ($payment_logs as $log) { ?>
                     <tr>
                         <td><?php echo $log->merchant_response_id; ?></td>
                         <td>
@@ -52,12 +61,13 @@
                         <td><?php echo $log->merchant_response_reference; ?></td>
                     </tr>
                 <?php } ?>
-                </tbody>
-
-            </table>
-        </div>
-
-
-    </div>
-
+                                 </tbody>
+                              </table>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </main>
 </div>
+

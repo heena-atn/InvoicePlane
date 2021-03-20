@@ -42,7 +42,7 @@ foreach ($custom_fields as $custom_field) {
     }
 }
 ?>
-
+<div class="page-container">
 <div id="headerbar">
     <h1 class="headerbar-title"><?php _htmlsc(format_client($client)); ?></h1>
 
@@ -70,13 +70,13 @@ foreach ($custom_fields as $custom_field) {
 </div>
 
 <ul id="submenu" class="nav nav-tabs nav-tabs-noborder">
-    <li class="active"><a data-toggle="tab" href="#clientDetails"><?php _trans('details'); ?></a></li>
-    <li><a data-toggle="tab" href="#clientQuotes"><?php _trans('quotes'); ?></a></li>
-    <li><a data-toggle="tab" href="#clientInvoices"><?php _trans('invoices'); ?></a></li>
-    <li><a data-toggle="tab" href="#clientPayments"><?php _trans('payments'); ?></a></li>
+    <li class="active tab_margin"><a data-toggle="tab" href="#clientDetails"><?php _trans('details'); ?></a></li>
+    <li class="tab_margin"><a data-toggle="tab" href="#clientQuotes"><?php _trans('quotes'); ?></a></li>
+    <li class="tab_margin"><a data-toggle="tab" href="#clientInvoices"><?php _trans('invoices'); ?></a></li>
+    <li class="tab_margin"><a data-toggle="tab" href="#clientPayments"><?php _trans('payments'); ?></a></li>
 </ul>
 
-<div id="content" class="tabbable tabs-below no-padding">
+<div id="content" class="tabbable tabs-below no-padding view_padding">
     <div class="tab-content no-padding">
 
         <div id="clientDetails" class="tab-pane tab-rich-content active">
@@ -365,3 +365,4 @@ foreach ($custom_fields as $custom_field) {
     </div>
 
 </div>
+                                    </div>

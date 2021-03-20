@@ -1,68 +1,21 @@
+
+<div class="page-container">
 <div id="headerbar">
 
     <h1 class="headerbar-title"><?php _trans('clients'); ?></h1>
 
     <div class="headerbar-item pull-right">
-        <button type="button" class="btn btn-default btn-sm submenu-toggle hidden-lg"
-                data-toggle="collapse" data-target="#ip-submenu-collapse">
-            <i class="fa fa-bars"></i> <?php _trans('submenu'); ?>
-        </button>
+      
         <a class="btn btn-primary btn-sm" href="<?php echo site_url('clients/form'); ?>">
             <i class="fa fa-plus"></i> <?php _trans('new'); ?>
         </a>
     </div>
 
-    <div class="headerbar-item pull-right visible-lg">
-        <?php echo pager(site_url('clients/status/' . $this->uri->segment(3)), 'mdl_clients'); ?>
-    </div>
-
-    <div class="headerbar-item pull-right visible-lg">
-        <div class="btn-group btn-group-sm index-options">
-            <a href="<?php echo site_url('clients/status/active'); ?>"
-               class="btn <?php echo $this->uri->segment(3) == 'active' || !$this->uri->segment(3) ? 'btn-primary' : 'btn-default' ?>">
-                <?php _trans('active'); ?>
-            </a>
-            <a href="<?php echo site_url('clients/status/inactive'); ?>"
-               class="btn  <?php echo $this->uri->segment(3) == 'inactive' ? 'btn-primary' : 'btn-default' ?>">
-                <?php _trans('inactive'); ?>
-            </a>
-            <a href="<?php echo site_url('clients/status/all'); ?>"
-               class="btn  <?php echo $this->uri->segment(3) == 'all' ? 'btn-primary' : 'btn-default' ?>">
-                <?php _trans('all'); ?>
-            </a>
-        </div>
-    </div>
-
 </div>
 
-<div id="submenu">
-    <div class="collapse clearfix" id="ip-submenu-collapse">
 
-        <div class="submenu-row">
-            <?php echo pager(site_url('clients/status/' . $this->uri->segment(3)), 'mdl_clients'); ?>
-        </div>
 
-        <div class="submenu-row">
-            <div class="btn-group btn-group-sm index-options">
-                <a href="<?php echo site_url('clients/status/active'); ?>"
-                   class="btn <?php echo $this->uri->segment(3) == 'active' || !$this->uri->segment(3) ? 'btn-primary' : 'btn-default' ?>">
-                    <?php _trans('active'); ?>
-                </a>
-                <a href="<?php echo site_url('clients/status/inactive'); ?>"
-                   class="btn  <?php echo $this->uri->segment(3) == 'inactive' ? 'btn-primary' : 'btn-default' ?>">
-                    <?php _trans('inactive'); ?>
-                </a>
-                <a href="<?php echo site_url('clients/status/all'); ?>"
-                   class="btn  <?php echo $this->uri->segment(3) == 'all' ? 'btn-primary' : 'btn-default' ?>">
-                    <?php _trans('all'); ?>
-                </a>
-            </div>
-        </div>
-
-    </div>
-</div>
-
-<div id="content" class="table-content">
+<!-- <div id="content" class="table-content">
 
     <?php $this->layout->load_view('layout/alerts'); ?>
 
@@ -70,4 +23,97 @@
         <?php $this->layout->load_view('clients/partial_client_table'); ?>
     </div>
 
-</div>
+</div> -->
+
+ <main class="bgc-grey-100">
+               <div id="mainContent">
+                  <div class="container-fluid">
+                    
+                     <div class="row">
+                        <div class="col-md-12">
+                           <div class="bgc-white bd bdrs-3 p-20 mB-20">
+                             
+                              <table id="dataTable" class="table table-striped table-bordered" cellspacing="0" width="100%">
+                                 <thead>
+                                   <tr>
+                                        <th><?php _trans('active'); ?></th>
+                                        <th><?php _trans('client_name'); ?></th>
+                                        <th><?php _trans('email_address'); ?></th>
+                                        <th><?php _trans('phone_number'); ?></th>
+                                        <th class="amount"><?php _trans('balance'); ?></th>
+                                        <th><?php _trans('options'); ?></th>
+                                    </tr>
+                                 </thead>
+                                 <tfoot>
+                                    <tr>
+                                            <th><?php _trans('active'); ?></th>
+                                            <th><?php _trans('client_name'); ?></th>
+                                            <th><?php _trans('email_address'); ?></th>
+                                            <th><?php _trans('phone_number'); ?></th>
+                                            <th class="amount"><?php _trans('balance'); ?></th>
+                                            <th><?php _trans('options'); ?></th>
+                                    </tr>
+                                 </tfoot>
+                                 <tbody>
+                                   <?php foreach ($records as $client) : ?>
+            <tr>
+                <td>
+                    <?php echo ($client->client_active) ? '<span class="label active">' . trans('yes') . '</span>' : '<span class="label inactive">' . trans('no') . '</span>'; ?>
+                </td>
+                <td><?php echo anchor('clients/view/' . $client->client_id, htmlsc(format_client($client))); ?></td>
+                <td><?php _htmlsc($client->client_email); ?></td>
+                <td><?php _htmlsc($client->client_phone ? $client->client_phone : ($client->client_mobile ? $client->client_mobile : '')); ?></td>
+                <td class="amount"><?php echo format_currency($client->client_invoice_balance); ?></td>
+                <td>
+                    <div class="options btn-group">
+                        <a class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown" href="#">
+                            <i class="fa fa-cog"></i> <?php _trans('options'); ?>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="<?php echo site_url('clients/view/' . $client->client_id); ?>" class="icon_margin">
+                                    <i class="fa fa-eye fa-margin"></i> <?php _trans('view'); ?>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="<?php echo site_url('clients/form/' . $client->client_id); ?>" class="icon_margin">
+                                    <i class="fa fa-edit fa-margin"></i> <?php _trans('edit'); ?>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="client-create-quote icon_margin"
+                                   data-client-id="<?php echo $client->client_id; ?>">
+                                    <i class="fa fa-file fa-margin"></i> <?php _trans('create_quote'); ?>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="client-create-invoice icon_margin"
+                                   data-client-id="<?php echo $client->client_id; ?>">
+                                    <i class="fa fa-file-text fa-margin"></i> <?php _trans('create_invoice'); ?>
+                                </a>
+                            </li>
+                            <li>
+                                <form action="<?php echo site_url('clients/delete/' . $client->client_id); ?>"
+                                      method="POST">
+                                    <?php _csrf_field(); ?>
+                                    <button type="submit" class="dropdown-button icon_margin"
+                                            onclick="return confirm('<?php _trans('delete_client_warning'); ?>');">
+                                        <i class="fa fa-trash-o fa-margin"></i> <?php _trans('delete'); ?>
+                                    </button>
+                                </form>
+                            </li>
+                        </ul>
+                    </div>
+                </td>
+            </tr>
+        <?php endforeach; ?>
+                                 </tbody>
+                              </table>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </main>
+
+      </div>
