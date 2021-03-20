@@ -52,6 +52,7 @@ foreach ($custom_fields as $custom_field) {
                data-client-id="<?php echo $client->client_id; ?>">
                 <i class="fa fa-file"></i> <?php _trans('create_quote'); ?>
             </a>
+            <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button>
             <a href="#" class="btn btn-default client-create-invoice"
                data-client-id="<?php echo $client->client_id; ?>">
                 <i class="fa fa-file-text"></i> <?php _trans('create_invoice'); ?></a>
