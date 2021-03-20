@@ -1,3 +1,8 @@
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
 <script>
     $(function () {
         $('#save_client_note').click(function () {
@@ -49,13 +54,15 @@ foreach ($custom_fields as $custom_field) {
     <div class="headerbar-item pull-right">
         <div class="btn-group btn-group-sm">
             <a href="#" class="btn btn-default client-create-quote"
-               data-client-id="<?php echo $client->client_id; ?>">
+               data-client-id="<?php echo $client->client_id; ?>" data-toggle="modal" data-target="#create-quote">
                 <i class="fa fa-file"></i> <?php _trans('create_quote'); ?>
             </a>
-            <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button>
+           
+
             <a href="#" class="btn btn-default client-create-invoice"
-               data-client-id="<?php echo $client->client_id; ?>">
+               data-client-id="<?php echo $client->client_id; ?>" data-toggle="modal" data-target="#create-invoice">
                 <i class="fa fa-file-text"></i> <?php _trans('create_invoice'); ?></a>
+
             <a href="<?php echo site_url('clients/form/' . $client->client_id); ?>"
                class="btn btn-default">
                 <i class="fa fa-edit"></i> <?php _trans('edit'); ?>
@@ -365,5 +372,9 @@ foreach ($custom_fields as $custom_field) {
         </div>
     </div>
 
+</div>    </div>
+
+<?php echo $this->load->view('modal_create_quote',array()) ?>
+<?php echo $this->load->view('modal_create_invoice',array()) ?>
+
 </div>
-                                    </div>

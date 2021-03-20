@@ -1592,6 +1592,7 @@ a.fc-more:hover {
     padding: 76px 12px;
 	/* border-bottom: 1px solid #ddd; */
 	margin-bottom: -59px;
+	margin-top: -82px !important;	
 }
 
 #headerbar:before,#headerbar:after {
@@ -1681,4 +1682,20 @@ body .tab_margin{
 	font-size: 17px !important;
 }
 
+.modal-header .close {
+    margin-right: -98px !important;
+}
 
+.close-btn {
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    margin-right: -762px;
+}
+
+.model-heading {
+    margin-right: 363px !important;
+}

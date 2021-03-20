@@ -60,12 +60,13 @@
 
 </script>
 
-<div id="create-invoice" class="modal modal-lg"
+<div id="create-invoice" class="modal fade"
      role="dialog" aria-labelledby="modal_create_invoice" aria-hidden="true">
+     <div class="modal-dialog">
     <form class="modal-content">
         <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal"><i class="fa fa-close"></i></button>
-            <h4 class="panel-title"><?php _trans('create_invoice'); ?></h4>
+            <button type="button" class="close" data-dismiss="modal"><i class="close-btn fa-close"></i></button>
+            <h4 class="model-heading"><?php _trans('create_invoice'); ?></h4>
         </div>
         <div class="modal-body">
 
@@ -138,5 +139,6 @@
         </div>
 
     </form>
+</div>
 
 </div>

@@ -1,13 +1,13 @@
+
+
 <script>
+
     $(function () {
         // Display the create quote modal
-        $('#create-quote').modal('show');
-
-        $('.simple-select').select2();
-
-        <?php $this->layout->load_view('clients/script_select2_client_id.js'); ?>
 
         // Toggle on/off permissive search on clients names
+<?php $this->layout->load_view('clients/script_select2_client_id.js',array()); ?>
+
         $('span#toggle_permissive_search_clients').click(function () {
             if ($('input#input_permissive_search_clients').val() == ('1')) {
                 $.get("<?php echo site_url('clients/ajax/save_preference_permissive_search_clients'); ?>", {
@@ -27,8 +27,9 @@
         });
 
         // Creates the quote
-        $('#quote_create_confirm').click(function () {
-            console.log('clicked');
+        $(document).on('click','#quote_create_confirm',function (e) {
+            alert('fff');
+            // console.log('clicked');
             // Posts the data to validate and create the quote;
             // will create the new client if necessary
             $.post("<?php echo site_url('quotes/ajax/create'); ?>", {
@@ -54,14 +55,25 @@
                     }
                 });
         });
+
+
+        $('#create-quote').modal('show');
+
+        $('.simple-select').select2();
+
+        // <?php $this->layout->load_view('clients/script_select2_client_id.js'); ?>
+
+
+
     });
 </script>
 
-<div id="create-quote" class="modal modal-lg" role="dialog" aria-labelledby="modal_create_quote" aria-hidden="true">
+<div id="create-quote" class="modal fade" role="dialog" aria-labelledby="modal_create_quote" aria-hidden="true">
+    <div class="modal-dialog">
     <form class="modal-content">
         <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal"><i class="fa fa-close"></i></button>
-            <h4 class="panel-title"><?php _trans('create_quote'); ?></h4>
+            <button type="button" class="close" data-dismiss="modal"><i class="close-btn fa-close"></i></button>
+            <h4 class="model-heading"><?php _trans('create_quote'); ?></h4>
         </div>
         <div class="modal-body">
 
@@ -132,5 +144,6 @@
         </div>
 
     </form>
+</div>
 
 </div>
