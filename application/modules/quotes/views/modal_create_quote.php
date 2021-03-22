@@ -3,10 +3,16 @@
 <script>
 
     $(function () {
+
+        $('#create-quote').modal('show');
+
+        $('.simple-select').select2();
+
+
         // Display the create quote modal
 
         // Toggle on/off permissive search on clients names
-<?php $this->layout->load_view('clients/script_select2_client_id.js',array()); ?>
+        <?php $this->layout->load_view('clients/script_select2_client_id.js',array()); ?>
 
         $('span#toggle_permissive_search_clients').click(function () {
             if ($('input#input_permissive_search_clients').val() == ('1')) {
@@ -28,7 +34,6 @@
 
         // Creates the quote
         $(document).on('click','#quote_create_confirm',function (e) {
-            alert('fff');
             // console.log('clicked');
             // Posts the data to validate and create the quote;
             // will create the new client if necessary
@@ -56,29 +61,20 @@
                 });
         });
 
-
-        $('#create-quote').modal('show');
-
-        $('.simple-select').select2();
-
-        // <?php $this->layout->load_view('clients/script_select2_client_id.js'); ?>
-
-
-
     });
 </script>
 
-<div id="create-quote" class="modal fade" role="dialog" aria-labelledby="modal_create_quote" aria-hidden="true">
-    <div class="modal-dialog">
+<div id="create-quote" class="modal modal-lg m-auto" role="dialog" aria-labelledby="modal_create_quote" aria-hidden="true" >
     <form class="modal-content">
         <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal"><i class="close-btn fa-close"></i></button>
-            <h4 class="model-heading"><?php _trans('create_quote'); ?></h4>
+            
+                <h4 class="panel-title" ><?php _trans('create_quote'); ?></h4>
+                <button type="button" class="close" data-dismiss="modal"><i class="fa fa-close"></i></button>
+            
+            
+            
         </div>
         <div class="modal-body">
-
-            <input class="hidden" id="input_permissive_search_clients"
-                   value="<?php echo get_setting('enable_permissive_search_clients'); ?>">
 
             <div class="form-group has-feedback">
                 <label for="create_quote_client_id"><?php _trans('client'); ?></label>
@@ -120,7 +116,7 @@
             <div class="form-group">
                 <label for="invoice_group_id"><?php _trans('invoice_group'); ?>: </label>
                 <select name="invoice_group_id" id="invoice_group_id"
-                	class="form-control simple-select" data-minimum-results-for-search="Infinity">
+                    class="form-control simple-select" data-minimum-results-for-search="Infinity">
                     <?php foreach ($invoice_groups as $invoice_group) { ?>
                         <option value="<?php echo $invoice_group->invoice_group_id; ?>"
                             <?php check_select(get_setting('default_quote_group'), $invoice_group->invoice_group_id); ?>>
@@ -144,6 +140,5 @@
         </div>
 
     </form>
-</div>
 
 </div>

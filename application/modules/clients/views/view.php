@@ -1,10 +1,6 @@
 
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-
-<script>
-    $(function () {
+<script type="text/javascript">
+   $(function () {
         $('#save_client_note').click(function () {
             $.post('<?php echo site_url('clients/ajax/save_client_note'); ?>',
                 {
@@ -67,6 +63,7 @@ foreach ($custom_fields as $custom_field) {
                class="btn btn-default">
                 <i class="fa fa-edit"></i> <?php _trans('edit'); ?>
             </a>
+            
             <a class="btn btn-danger"
                href="<?php echo site_url('clients/delete/' . $client->client_id); ?>"
                onclick="return confirm('<?php _trans('delete_client_warning'); ?>');">
@@ -372,9 +369,6 @@ foreach ($custom_fields as $custom_field) {
         </div>
     </div>
 
-</div>    </div>
+</div>   
+ </div>
 
-<?php echo $this->load->view('modal_create_quote',array()) ?>
-<?php echo $this->load->view('modal_create_invoice',array()) ?>
-
-</div>

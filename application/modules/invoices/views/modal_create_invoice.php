@@ -60,21 +60,17 @@
 
 </script>
 
-<div id="create-invoice" class="modal fade"
+<div id="create-invoice" class="modal modal-lg  m-auto"
      role="dialog" aria-labelledby="modal_create_invoice" aria-hidden="true">
-     <div class="modal-dialog">
     <form class="modal-content">
         <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal"><i class="close-btn fa-close"></i></button>
+
             <h4 class="model-heading"><?php _trans('create_invoice'); ?></h4>
+
+            <button type="button" class="close" data-dismiss="modal"><i class="fa fa-close"></i></button>
+            
         </div>
         <div class="modal-body">
-
-            <input class="hidden" id="payment_method_id"
-                   value="<?php echo get_setting('invoice_default_payment_method'); ?>">
-
-            <input class="hidden" id="input_permissive_search_clients"
-                   value="<?php echo get_setting('enable_permissive_search_clients'); ?>">
 
             <div class="form-group has-feedback">
                 <label for="create_invoice_client_id"><?php _trans('client'); ?></label>
@@ -139,6 +135,6 @@
         </div>
 
     </form>
-</div>
+
 
 </div>

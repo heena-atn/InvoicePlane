@@ -293,7 +293,7 @@ if ($this->config->item('disable_read_only') == true) {
 
 </div>
 
-<div id="content">
+<div id="content" class="view_padding">
 
     <?php echo $this->layout->load_view('layout/alerts'); ?>
 

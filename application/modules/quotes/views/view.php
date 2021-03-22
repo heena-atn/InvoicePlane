@@ -166,27 +166,27 @@ $cv = $this->controller->view_data["custom_values"];
             </a>
             <ul class="dropdown-menu dropdown-menu-right">
                 <li>
-                    <a href="#add-quote-tax" data-toggle="modal">
+                    <a href="#add-quote-tax" data-toggle="modal" class="icon_margin">
                         <i class="fa fa-plus fa-margin"></i>
                         <?php _trans('add_quote_tax'); ?>
                     </a>
                 </li>
                 <li>
                     <a href="#" id="btn_generate_pdf"
-                       data-quote-id="<?php echo $quote_id; ?>">
+                       data-quote-id="<?php echo $quote_id; ?>"class="icon_margin">
                         <i class="fa fa-print fa-margin"></i>
                         <?php _trans('download_pdf'); ?>
                     </a>
                 </li>
                 <li>
-                    <a href="<?php echo site_url('mailer/quote/' . $quote->quote_id); ?>">
+                    <a href="<?php echo site_url('mailer/quote/' . $quote->quote_id); ?>" class="icon_margin">
                         <i class="fa fa-send fa-margin"></i>
                         <?php _trans('send_email'); ?>
                     </a>
                 </li>
                 <li>
                     <a href="#" id="btn_quote_to_invoice"
-                       data-quote-id="<?php echo $quote_id; ?>">
+                       data-quote-id="<?php echo $quote_id; ?>" class="icon_margin">
                         <i class="fa fa-refresh fa-margin"></i>
                         <?php _trans('quote_to_invoice'); ?>
                     </a>
@@ -194,13 +194,13 @@ $cv = $this->controller->view_data["custom_values"];
                 <li>
                     <a href="#" id="btn_copy_quote"
                        data-quote-id="<?php echo $quote_id; ?>"
-                       data-client-id="<?php echo $quote->client_id; ?>">
+                       data-client-id="<?php echo $quote->client_id; ?>" class="icon_margin">
                         <i class="fa fa-copy fa-margin"></i>
                         <?php _trans('copy_quote'); ?>
                     </a>
                 </li>
                 <li>
-                    <a href="#delete-quote" data-toggle="modal">
+                    <a href="#delete-quote" data-toggle="modal" class="icon_margin">
                         <i class="fa fa-trash-o fa-margin"></i> <?php _trans('delete'); ?>
                     </a>
                 </li>
@@ -215,7 +215,7 @@ $cv = $this->controller->view_data["custom_values"];
 
 </div>
 
-<div id="content">
+<div id="content" class="view_padding">
     <?php echo $this->layout->load_view('layout/alerts'); ?>
     <div id="quote_form">
         <div class="quote">
