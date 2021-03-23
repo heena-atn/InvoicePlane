@@ -1,47 +1,47 @@
 
 <script type="text/javascript">
    $(function () {
-        $('#save_client_note').click(function () {
-            $.post('<?php echo site_url('clients/ajax/save_client_note'); ?>',
-                {
-                    client_id: $('#client_id').val(),
-                    client_note: $('#client_note').val()
-                }, function (data) {
-                    <?php echo(IP_DEBUG ? 'console.log(data);' : ''); ?>
-                    var response = JSON.parse(data);
-                    if (response.success === 1) {
-                        // The validation was successful
-                        $('.control-group').removeClass('error');
-                        $('#client_note').val('');
+        // $('#save_client_note').click(function () {
+        //     $.post('<?php echo site_url('clients/ajax/save_client_note'); ?>',
+        //         {
+        //             client_id: $('#client_id').val(),
+        //             client_note: $('#client_note').val()
+        //         }, function (data) {
+        //             <?php echo(IP_DEBUG ? 'console.log(data);' : ''); ?>
+        //             var response = JSON.parse(data);
+        //             if (response.success === 1) {
+        //                 // The validation was successful
+        //                 $('.control-group').removeClass('error');
+        //                 $('#client_note').val('');
 
-                        // Reload all notes
-                        $('#notes_list').load("<?php echo site_url('clients/ajax/load_client_notes'); ?>",
-                            {
-                                client_id: <?php echo $client->client_id; ?>
-                            }, function (response) {
-                                <?php echo(IP_DEBUG ? 'console.log(response);' : ''); ?>
-                            });
-                    } else {
-                        // The validation was not successful
-                        $('.control-group').removeClass('error');
-                        for (var key in response.validation_errors) {
-                            $('#' + key).parent().addClass('has-error');
-                        }
-                    }
-                });
-        });
+        //                 // Reload all notes
+        //                 $('#notes_list').load("<?php echo site_url('clients/ajax/load_client_notes'); ?>",
+        //                     {
+        //                         client_id: <?php echo $client->client_id; ?>
+        //                     }, function (response) {
+        //                         <?php echo(IP_DEBUG ? 'console.log(response);' : ''); ?>
+        //                     });
+        //             } else {
+        //                 // The validation was not successful
+        //                 $('.control-group').removeClass('error');
+        //                 for (var key in response.validation_errors) {
+        //                     $('#' + key).parent().addClass('has-error');
+        //                 }
+        //             }
+        //         });
+        // });
     });
 </script>
 
 <?php
-$locations = array();
-foreach ($custom_fields as $custom_field) {
-    if (array_key_exists($custom_field->custom_field_location, $locations)) {
-        $locations[$custom_field->custom_field_location] += 1;
-    } else {
-        $locations[$custom_field->custom_field_location] = 1;
-    }
-}
+// $locations = array();
+// foreach ($custom_fields as $custom_field) {
+//     if (array_key_exists($custom_field->custom_field_location, $locations)) {
+//         $locations[$custom_field->custom_field_location] += 1;
+//     } else {
+//         $locations[$custom_field->custom_field_location] = 1;
+//     }
+// }
 ?>
 <div class="page-container">
 <div id="headerbar">

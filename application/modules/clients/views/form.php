@@ -77,7 +77,7 @@ $cv = $this->controller->view_data['custom_values'];
                             <label for="client_language">
                                 <?php _trans('language'); ?>
                             </label>
-                            <select name="client_language" id="client_language" class="form-control simple-select">
+                            <select name="client_language" id="client_language" class="form-control simple-select" style="width: 548px;">
                                 <option value="system">
                                     <?php _trans('use_system_language') ?>
                                 </option>
@@ -158,7 +158,7 @@ $cv = $this->controller->view_data['custom_values'];
                             <label for="client_country"><?php _trans('country'); ?></label>
 
                             <div class="controls">
-                                <select name="client_country" id="client_country" class="form-control">
+                                <select name="client_country" id="client_country" class="form-control" style="width: 548px;">
                                     <option value=""><?php _trans('none'); ?></option>
                                     <?php foreach ($countries as $cldr => $country) { ?>
                                         <option value="<?php echo $cldr; ?>"
@@ -264,7 +264,7 @@ $cv = $this->controller->view_data['custom_values'];
 
                             <div class="controls">
                                 <select name="client_gender" id="client_gender"
-                                	class="form-control simple-select" data-minimum-results-for-search="Infinity">
+                                	class="form-control simple-select" data-minimum-results-for-search="Infinity" style="width: 548px;">
                                     <?php
                                     $genders = array(
                                         trans('gender_male'),
@@ -416,10 +416,7 @@ $cv = $this->controller->view_data['custom_values'];
             </div>
         </div>
         </div>
-
         
-       
-                  
     </div>
 </form>
 </div>

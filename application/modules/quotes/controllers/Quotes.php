@@ -33,8 +33,11 @@ class Quotes extends Admin_Controller
 
      public function form()
     {
-        // Display all quotes by default
-         $this->layout->buffer('content', 'quotes/form');
+          $this->load->model('invoice_groups/mdl_invoice_groups');
+            $data = [
+                'invoice_groups' => $this->mdl_invoice_groups->get()->result(),
+            ];
+         $this->layout->buffer('content', 'quotes/form',$data);
         $this->layout->render();
     }
 

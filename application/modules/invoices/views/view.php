@@ -209,13 +209,13 @@ if ($this->config->item('disable_read_only') == true) {
             <ul class="dropdown-menu">
                 <?php if ($invoice->is_read_only != 1) { ?>
                     <li>
-                        <a href="#add-invoice-tax" data-toggle="modal">
+                        <a href="#add-invoice-tax" data-toggle="modal" class="icon_margin">
                             <i class="fa fa-plus fa-margin"></i> <?php _trans('add_invoice_tax'); ?>
                         </a>
                     </li>
                 <?php } ?>
                 <li>
-                    <a href="#" id="btn_create_credit" data-invoice-id="<?php echo $invoice_id; ?>">
+                    <a href="#" id="btn_create_credit" data-invoice-id="<?php echo $invoice_id; ?>" class="icon_margin">
                         <i class="fa fa-minus fa-margin"></i> <?php _trans('create_credit_invoice'); ?>
                     </a>
                 </li>
@@ -225,7 +225,7 @@ if ($this->config->item('disable_read_only') == true) {
                            data-invoice-id="<?php echo $invoice_id; ?>"
                            data-invoice-balance="<?php echo $invoice->invoice_balance; ?>"
                            data-invoice-payment-method="<?php echo $invoice->payment_method; ?>"
-                           data-payment-cf-exist="<?php echo $payment_cf_exist; ?>">
+                           data-payment-cf-exist="<?php echo $payment_cf_exist; ?>" class="icon_margin">
                             <i class="fa fa-credit-card fa-margin"></i>
                             <?php _trans('enter_payment'); ?>
                         </a>
@@ -233,13 +233,13 @@ if ($this->config->item('disable_read_only') == true) {
                 <?php endif; ?>
                 <li>
                     <a href="#" id="btn_generate_pdf"
-                       data-invoice-id="<?php echo $invoice_id; ?>">
+                       data-invoice-id="<?php echo $invoice_id; ?>" class="icon_margin">
                         <i class="fa fa-print fa-margin"></i>
                         <?php _trans('download_pdf'); ?>
                     </a>
                 </li>
                 <li>
-                    <a href="<?php echo site_url('mailer/invoice/' . $invoice->invoice_id); ?>">
+                    <a href="<?php echo site_url('mailer/invoice/' . $invoice->invoice_id); ?>" class="icon_margin">
                         <i class="fa fa-send fa-margin"></i>
                         <?php _trans('send_email'); ?>
                     </a>
@@ -247,21 +247,21 @@ if ($this->config->item('disable_read_only') == true) {
                 <li class="divider"></li>
                 <li>
                     <a href="#" id="btn_create_recurring"
-                       data-invoice-id="<?php echo $invoice_id; ?>">
+                       data-invoice-id="<?php echo $invoice_id; ?>" class="icon_margin">
                         <i class="fa fa-refresh fa-margin"></i>
                         <?php _trans('create_recurring'); ?>
                     </a>
                 </li>
                 <li>
                     <a href="#" id="btn_copy_invoice"
-                       data-invoice-id="<?php echo $invoice_id; ?>">
+                       data-invoice-id="<?php echo $invoice_id; ?>" class="icon_margin">
                         <i class="fa fa-copy fa-margin"></i>
                         <?php _trans('copy_invoice'); ?>
                     </a>
                 </li>
                 <?php if ($invoice->invoice_status_id == 1 || ($this->config->item('enable_invoice_deletion') === true && $invoice->is_read_only != 1)) { ?>
                     <li>
-                        <a href="#delete-invoice" data-toggle="modal">
+                        <a href="#delete-invoice" data-toggle="modal" class="icon_margin">
                             <i class="fa fa-trash-o fa-margin"></i>
                             <?php _trans('delete'); ?>
                         </a>

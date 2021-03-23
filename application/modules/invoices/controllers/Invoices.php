@@ -34,6 +34,17 @@ class Invoices extends Admin_Controller
         redirect('invoices/status/all');
     }
 
+    public function form()
+    {
+          $this->load->model('invoice_groups/mdl_invoice_groups');
+           $data = [
+                'invoice_groups' => $this->mdl_invoice_groups->get()->result(),
+            ];
+            
+         $this->layout->buffer('content', 'invoices/form',$data);
+        $this->layout->render();
+    }
+
     /**
      * @param string $status
      * @param int $page

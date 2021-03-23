@@ -72,7 +72,6 @@
                 <button type="button" class="close" data-dismiss="modal"><i class="fa fa-close"></i></button>
             
             
-            
         </div>
         <div class="modal-body">
 

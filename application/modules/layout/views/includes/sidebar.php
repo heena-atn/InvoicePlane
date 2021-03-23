@@ -72,7 +72,7 @@
                      </a>
                         <ul class="dropdown-menu">
                            <li>
-                              <a class='sidebar-link' href="<?php echo base_url('invoices/index'); ?>"><?php _trans('create_invoice'); ?></a>
+                              <a class='sidebar-link' href="<?php echo base_url('invoices/form'); ?>"><?php _trans('create_invoice'); ?></a>
                            </li>
                            <li>
                               <a class='sidebar-link' href="<?php echo base_url('invoices/status'); ?>"><?php _trans('view_invoices'); ?></a>
