@@ -26,13 +26,25 @@
 </style>
   
 
+
+</head>
+
+<body class="app">
+
+<div id="loader">
+ <div class="spinner"></div>
+</div>
+
+<?php $this->load->view('layout/includes/sidebar',array()); ?>
+
+<?php $this->load->view('layout/includes/head',array());  ?>
+
 <script type="text/javascript" src="<?php echo base_url("assets/admin/js/vendor.js"); ?>"></script>
 
 
 <script src="<?php _core_asset('js/dependencies.min.js'); ?>"></script>
 
-<script
-  src="https://code.jquery.com/jquery-migrate-3.3.2.min.js"></script>
+<script src="https://code.jquery.com/jquery-migrate-3.3.2.min.js"></script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
 
@@ -45,18 +57,10 @@
 <?php 
 } ?>
 
-<?php $this->layout->load_view('layout/includes/footerjs'); ?>
+<?php $this->layout->load_view('layout/includes/model_js',array()); ?>
 
 
 
-</head>
-
-<body class="app">
-
-
-<?php $this->layout->load_view('layout/includes/sidebar'); ?>
-
-<?php $this->layout->load_view('layout/includes/head');  ?>
 
 <div id="main-area">
    

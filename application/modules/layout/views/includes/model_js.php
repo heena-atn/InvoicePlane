@@ -1,4 +1,13 @@
 <script type="text/javascript">
+
+
+ window.addEventListener('load', function load() {
+ const loader = document.getElementById('loader');
+ setTimeout(function() {
+   loader.classList.add('fadeOut');
+ }, 300);
+ });
+
     Dropzone.autoDiscover = false;
 
     <?php if (trans('cldr') != 'en') { ?>
