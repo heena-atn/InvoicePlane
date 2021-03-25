@@ -60,6 +60,7 @@
 
 </script>
 
+<<<<<<< Updated upstream
 <div id="create-invoice" class="modal modal-lg  m-auto"
      role="dialog" aria-labelledby="modal_create_invoice" aria-hidden="true">
     <form class="modal-content">
@@ -72,6 +73,23 @@
         </div>
         <div class="modal-body">
 
+=======
+<div id="create-invoice" class="modal modal-lg"
+     role="dialog" aria-labelledby="modal_create_invoice" aria-hidden="true" style="margin-left: 23% !important; ">
+    <form class="modal-content">
+        <div class="modal-header">            
+            <h4 class="panel-title"><?php _trans('create_invoice'); ?></h4>
+            <button type="button" class="close" data-dismiss="modal"><i class="fa fa-close"></i></button>
+        </div>
+        <div class="modal-body">
+
+            <input type="hidden" id="payment_method_id"
+                   value="<?php echo get_setting('invoice_default_payment_method'); ?>">
+
+            <input type="hidden" id="input_permissive_search_clients"
+                   value="<?php echo get_setting('enable_permissive_search_clients'); ?>">
+
+>>>>>>> Stashed changes
             <div class="form-group has-feedback">
                 <label for="create_invoice_client_id"><?php _trans('client'); ?></label>
                 <div class="input-group">

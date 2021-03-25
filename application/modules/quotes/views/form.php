@@ -63,6 +63,7 @@
     });
 </script>
 
+<<<<<<< Updated upstream
 <div class="page-container">
     <form method="post">
         <input type="hidden" name="<?php echo $this->config->item('csrf_token_name'); ?>"
@@ -75,16 +76,50 @@
 
     <div id="content">
         <div class="main-content bgc-grey-100">
+=======
+<div class="card">
+    <div class="card-body">
+        
+
+    <form method="post" class="w-100">
+        <input type="hidden" name="<?php echo $this->config->item('csrf_token_name'); ?>"
+           value="<?php echo $this->security->get_csrf_hash() ?>">
+
+      <div class="container">
+        <div class="row">
+            <div class="col-6">
+                <h6 class="headerbar-title pl-0 ml-0"><?php _trans('create_quote'); ?></h6>
+            </div>
+            <div class="col-6 text-right">
+                <?php $this->layout->load_view('layout/header_buttons'); ?>
+            </div>
+        </div>
+       
+    </div>
+
+
+
+    <div id="content">
+        <div class="container">
+>>>>>>> Stashed changes
             <div id='mainContent'>
                 <div class="row mt-3">
                     <div class="col-xs-12 col-sm-12">
                         <div class="panel panel-default bgc-white p-20 bd">
                             <div class="mT-30">
                                
+<<<<<<< Updated upstream
                                 <div class="form-group has-feedback">
                                     <label for="create_quote_client_id"><?php _trans('client'); ?></label>
                                     <div class="input-group">
                                         <select name="client_id" id="create_quote_client_id" class="client-id-select form-control" style="width: 1148px !important" 
+=======
+
+                                <div class="form-group has-feedback">
+                                    <label for="create_quote_client_id"><?php _trans('client'); ?></label>
+                                    <div class="input-group">
+                                        <select name="client_id" id="create_quote_client_id" class="client-id-select form-control simple-select" style="width: 1148px !important" 
+>>>>>>> Stashed changes
                                                 autofocus="autofocus">
                                             <?php if (!empty($client)) : ?>
                                                 <option value="<?php echo $client->client_id; ?>"><?php _htmlsc(format_client($client)); ?></option>
@@ -121,7 +156,11 @@
                                 <div class="form-group">
                                     <label for="invoice_group_id"><?php _trans('invoice_group'); ?>: </label>
                                     <select name="invoice_group_id" id="invoice_group_id" style="width: 1148px !important" 
+<<<<<<< Updated upstream
                                         class="form-control simple-select" data-minimum-results-for-search="Infinity">
+=======
+                                        class="form-control" data-minimum-results-for-search="Infinity">
+>>>>>>> Stashed changes
                                         <?php foreach ($invoice_groups as $invoice_group) { ?>
                                             <option value="<?php echo $invoice_group->invoice_group_id; ?>"
                                                 <?php check_select(get_setting('default_quote_group'), $invoice_group->invoice_group_id); ?>>
@@ -147,4 +186,10 @@
 
     </form>
 
+<<<<<<< Updated upstream
 </div>
+=======
+
+    </div>
+</div>
+>>>>>>> Stashed changes

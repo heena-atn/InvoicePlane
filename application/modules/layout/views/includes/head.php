@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 
 <div class="page-container top_nav_page_container">   
   <div class="header navbar">
@@ -124,3 +125,121 @@
 </div>
  
             
+=======
+<script type="text/javascript">
+
+
+ window.addEventListener('load', function load() {
+ const loader = document.getElementById('loader');
+ setTimeout(function() {
+   loader.classList.add('fadeOut');
+ }, 300);
+ });
+
+    // Dropzone.autoDiscover = false;
+
+    <?php if (trans('cldr') != 'en') { ?>
+    $.fn.select2.defaults.set('language', '<?php _trans('cldr'); ?>');
+    <?php } ?>
+
+    $(function () {
+        $('.nav-tabs').tab();
+        $('.tip').tooltip();
+
+        // $('body').on('focus', '.datepicker', function () {
+        //     $(this).datepicker({
+        //         autoclose: true,
+        //         format: '<?php echo date_format_datepicker(); ?>',
+        //         language: '<?php _trans('cldr'); ?>',
+        //         weekStart: '<?php echo get_setting('first_day_of_week'); ?>',
+        //         todayBtn: "linked"
+        //     });
+        // });
+
+        $(document).on('click', '.create-invoice', function () {
+            $('#modal-placeholder').load("<?php echo site_url('invoices/ajax/modal_create_invoice'); ?>");
+        });
+
+        $(document).on('click', '.create-quote', function () {
+            $('#modal-placeholder').load("<?php echo site_url('quotes/ajax/modal_create_quote'); ?>");
+        });
+
+        $(document).on('click', '#btn_quote_to_invoice', function () {
+            var quote_id = $(this).data('quote-id');
+            $('#modal-placeholder').load("<?php echo site_url('quotes/ajax/modal_quote_to_invoice'); ?>/" + quote_id);
+        });
+
+        $(document).on('click', '#btn_copy_invoice', function () {
+            var invoice_id = $(this).data('invoice-id');
+            $('#modal-placeholder').load("<?php echo site_url('invoices/ajax/modal_copy_invoice'); ?>", {invoice_id: invoice_id});
+        });
+
+        $(document).on('click', '#btn_create_credit', function () {
+            var invoice_id = $(this).data('invoice-id');
+            $('#modal-placeholder').load("<?php echo site_url('invoices/ajax/modal_create_credit'); ?>", {invoice_id: invoice_id});
+        });
+
+        $(document).on('click', '#btn_copy_quote', function () {
+            var quote_id = $(this).data('quote-id');
+            var client_id = $(this).data('client-id');
+            $('#modal-placeholder').load("<?php echo site_url('quotes/ajax/modal_copy_quote'); ?>", {
+                quote_id: quote_id,
+                client_id: client_id
+            });
+        });
+
+        $(document).on('click', '.client-create-invoice', function () {
+            var client_id = $(this).data('client-id');
+            $('#modal-placeholder').load("<?php echo site_url('invoices/ajax/modal_create_invoice'); ?>", {client_id: client_id});
+        });
+
+        $(document).on('click', '.client-create-quote', function () {
+            var client_id = $(this).data('client-id');
+            $('#modal-placeholder').load("<?php echo base_url('quotes/ajax/modal_create_quote'); ?>", {client_id: client_id});
+        });
+
+        $(document).on('click', '.invoice-add-payment', function () {
+            var invoice_id = $(this).data('invoice-id');
+            var invoice_balance = $(this).data('invoice-balance');
+            var invoice_payment_method = $(this).data('invoice-payment-method');
+            var payment_cf_exist =  $(this).data('payment-cf-exist');
+            $('#modal-placeholder').load("<?php echo site_url('payments/ajax/modal_add_payment'); ?>", {
+                invoice_id: invoice_id,
+                invoice_balance: invoice_balance,
+                invoice_payment_method: invoice_payment_method,
+                payment_cf_exist: payment_cf_exist
+            });
+        });
+
+    });
+</script>
+ <nav class="navbar navbar-expand-lg main-navbar">
+        <form class="form-inline mr-auto">
+          <ul class="navbar-nav mr-3">
+            <li><a href="#" data-toggle="sidebar" class="nav-link nav-link-lg"><i class="fas fa-bars"></i></a></li>        
+          </ul>         
+        </form>
+        <ul class="navbar-nav navbar-right">          
+          <li class="dropdown"><a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle nav-link-lg nav-link-user">
+            <img alt="image" src="http://localhost/stisla/assets/img/avatar/avatar-1.png" class="rounded-circle mr-1">
+            <div class="d-sm-none d-lg-inline-block">Hi, Ujang Maman</div></a>
+            <div class="dropdown-menu dropdown-menu-right">
+              <div class="dropdown-title">Logged in 5 min ago</div>
+              <a href="features-profile.html" class="dropdown-item has-icon">
+                <i class="far fa-user"></i> Profile
+              </a>
+              <a href="features-activities.html" class="dropdown-item has-icon">
+                <i class="fas fa-bolt"></i> Activities
+              </a>
+              <a href="features-settings.html" class="dropdown-item has-icon">
+                <i class="fas fa-cog"></i> Settings
+              </a>
+              <div class="dropdown-divider"></div>
+              <a href="#" class="dropdown-item has-icon text-danger">
+                <i class="fas fa-sign-out-alt"></i> Logout
+              </a>
+            </div>
+          </li>
+        </ul>
+      </nav>
+>>>>>>> Stashed changes

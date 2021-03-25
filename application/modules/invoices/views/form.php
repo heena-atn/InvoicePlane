@@ -58,6 +58,7 @@
 
 </script>
 
+<<<<<<< Updated upstream
 <div class="page-container">
     <form method="post">
         <input type="hidden" name="<?php echo $this->config->item('csrf_token_name'); ?>"
@@ -70,6 +71,29 @@
 
     <div id="content">
         <div class="main-content bgc-grey-100">
+=======
+<div class="card">
+    <div class="card-body">
+
+    <form method="post" class="w-100">
+        <input type="hidden" name="<?php echo $this->config->item('csrf_token_name'); ?>"
+           value="<?php echo $this->security->get_csrf_hash() ?>">
+
+      <div class="container">
+        <div class="row">
+            <div class="col-6">
+                <h6 class="headerbar-title pl-0 ml-0"><?php _trans('create_invoice'); ?></h6>
+            </div>
+            <div class="col-6 text-right">
+                <?php $this->layout->load_view('layout/header_buttons'); ?>
+            </div>
+        </div>
+       
+    </div>
+
+    <div id="content">
+        <div class="container">
+>>>>>>> Stashed changes
             <div id='mainContent'>
                 <div class="row mt-3">
                     <div class="col-xs-12 col-sm-12">
@@ -140,5 +164,9 @@
     </div>
 
     </form>
+<<<<<<< Updated upstream
 
+=======
+</div>
+>>>>>>> Stashed changes
 </div>

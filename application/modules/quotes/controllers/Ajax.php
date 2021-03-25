@@ -233,6 +233,7 @@ class Ajax extends Admin_Controller
 
     public function modal_create_quote()
     {
+        print_r('aa');
         $this->load->module('layout');
         $this->load->model('invoice_groups/mdl_invoice_groups');
         $this->load->model('tax_rates/mdl_tax_rates');

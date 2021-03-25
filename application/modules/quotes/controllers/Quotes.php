@@ -31,7 +31,11 @@ class Quotes extends Admin_Controller
         redirect('quotes/status/all');
     }
 
+<<<<<<< Updated upstream
      public function form()
+=======
+    public function form()
+>>>>>>> Stashed changes
     {
           $this->load->model('invoice_groups/mdl_invoice_groups');
             $data = [

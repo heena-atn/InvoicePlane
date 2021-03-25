@@ -11,15 +11,23 @@ $cv = $this->controller->view_data['custom_values'];
         });
     });
 </script>
-
-<form method="post">
+<div class="card">
+    <div class="card-body">
+<form method="post" class="w-100">
 
     <input type="hidden" name="<?php echo $this->config->item('csrf_token_name'); ?>"
            value="<?php echo $this->security->get_csrf_hash() ?>">
 
-    <div id="headerbar">
-        <h1 class="headerbar-title"><?php _trans('client_form'); ?></h1>
-        <?php $this->layout->load_view('layout/header_buttons'); ?>
+    <div class="container">
+        <div class="row">
+            <div class="col-6">
+                <h6 class="headerbar-title pl-0 ml-0"><?php _trans('client_form'); ?></h6>
+            </div>
+            <div class="col-6 text-right">
+                <?php $this->layout->load_view('layout/header_buttons'); ?>
+            </div>
+        </div>
+       
     </div>
 
     <div id="content">
@@ -419,4 +427,8 @@ $cv = $this->controller->view_data['custom_values'];
         
     </div>
 </form>
+<<<<<<< Updated upstream
+=======
+</div>
+>>>>>>> Stashed changes
 </div>

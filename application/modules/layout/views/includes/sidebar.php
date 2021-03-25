@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
             <div class="sidebar">
             <div class="sidebar-inner">
                <div class="sidebar-logo">
@@ -227,3 +228,135 @@
             </div>
          </div>
          
+=======
+<aside id="sidebar-wrapper">
+          <div class="sidebar-brand">
+            <a href="#">Legaldairy</a>
+          </div>
+          <div class="sidebar-brand sidebar-brand-sm">
+            <a href="index.html">St</a>
+          </div>
+          <ul class="sidebar-menu">
+              <li class="menu-header">Dashboard</li>
+              <li class="nav-item dropdown">
+                <a href="#" class="nav-link has-dropdown"><i class="fas fa-fire"></i><span>Dashboard</span></a>
+                <ul class="dropdown-menu">
+                  <li><a class="nav-link" href="#">General Dashboard</a></li>
+                </ul>
+              </li>
+
+             
+              <li class="menu-header">Pages</li>
+              <li class="nav-item dropdown">
+                    <a href="#" class="nav-link has-dropdown"><i class="fa fa-users"></i><span><?php _trans('clients'); ?></span></a>
+                    <ul class="dropdown-menu">
+                      <li><a class="nav-link" href="<?php echo base_url('clients/form'); ?>"><?php _trans('add_client'); ?></a>
+                      </li>  
+                      <li><a class="nav-link" href="<?php echo base_url('clients/status'); ?>"><?php _trans('view_client'); ?></a>
+                      </li>                 
+                    </ul>
+              </li>
+
+               <li class="nav-item dropdown">
+                    <a href="#" class="nav-link has-dropdown"><i class="fa fa-file"></i><span><?php _trans('quotes'); ?></span></a>
+                    <ul class="dropdown-menu">
+                          <li><a class="nav-link" href="<?php echo base_url('quotes/form'); ?>"><?php _trans('create_quote'); ?></a>
+                          </li>  
+                          <li><a class="nav-link" href="<?php echo base_url('quotes/status'); ?>"><?php _trans('view_quotes'); ?></a>
+                          </li>                 
+                    </ul>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link has-dropdown"><i class="fa fa-file-text"></i><span><?php _trans('invoices'); ?></span></a>
+                    <ul class="dropdown-menu">
+                          <li><a class="nav-link" href="<?php echo base_url('invoices/form'); ?>"><?php _trans('create_invoice'); ?></a>
+                          </li>  
+                          <li><a class="nav-link" href="<?php echo base_url('invoices/status'); ?>"><?php _trans('view_invoices'); ?></a>
+                          </li>  
+                           <li><a class="nav-link" href="<?php echo base_url('invoices/recurring/index'); ?>"><?php _trans('view_recurring_invoices'); ?></a>
+                          </li>                  
+                    </ul>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link has-dropdown"><i class="fa fa-money"></i><span><?php _trans('payments'); ?></span></a>
+                    <ul class="dropdown-menu">
+                          <li><a class="nav-link" href="<?php echo base_url('payments/form'); ?>"><?php _trans('enter_payment'); ?></a>
+                          </li>  
+                          <li><a class="nav-link" href="<?php echo base_url('payments/status'); ?>"><?php _trans('view_payments'); ?></a>
+                          </li> 
+                           <li><a class="nav-link" href="<?php echo base_url('payments/online_logs'); ?>"><?php _trans('view_payment_logs'); ?></a>
+                          </li> 
+                    </ul>                   
+                  </li> 
+
+                  <li class="nav-item dropdown">
+                    <a href="#" class="nav-link has-dropdown"><i class="fa fa-database"></i><span><?php _trans('products'); ?></span></a>
+                        <ul class="dropdown-menu">
+                              <li><a class="nav-link" href="<?php echo base_url('products/form'); ?>"><?php _trans('create_product'); ?></a>
+                              </li>  
+                              <li><a class="nav-link" href="<?php echo base_url('products/index'); ?>"><?php _trans('view_products'); ?></a>
+                              </li> 
+                               <li><a class="nav-link" href="<?php echo base_url('families/index'); ?>"><?php _trans('view_product_families'); ?></a>
+                              </li> 
+                              <li><a class="nav-link" href="<?php echo base_url('units/index'); ?>"><?php _trans('view_product_units'); ?></a>
+                              </li>  
+                        </ul>
+                 </li>
+
+                  <?php if (get_setting('projects_enabled') == 1) : ?>
+                  <li class="nav-item dropdown">
+                    <a href="#" class="nav-link has-dropdown"><i class="fa fa-check-square-o"></i><span><?php _trans('products'); ?></span></a>
+                        <ul class="dropdown-menu">
+                              <li><a class="nav-link" href="<?php echo base_url('tasks/form'); ?>"><?php _trans('create_task'); ?></a>
+                              </li>  
+                              <li><a class="nav-link" href="<?php echo base_url('tasks/index'); ?>"><?php _trans('view_tasks'); ?></a>
+                              </li> 
+                               <li><a class="nav-link" href="<?php echo base_url('projects/form'); ?>"><?php _trans('create_project'); ?></a>
+                              </li> 
+                              <li><a class="nav-link" href="<?php echo base_url('projects/index'); ?>"><?php _trans('view_projects'); ?></a>
+                              </li>  
+                        </ul>
+                 </li>
+                <?php endif; ?>
+
+                  <li class="nav-item dropdown">
+                    <a href="#" class="nav-link has-dropdown"><i class="fa fa-file"></i><span><?php _trans('reports'); ?></span></a>
+                        <ul class="dropdown-menu">
+                              <li><a class="nav-link" href="<?php echo base_url('reports/invoice_aging'); ?>"><?php _trans('invoice_aging'); ?></a>
+                              </li>  
+                              <li><a class="nav-link" href="<?php echo base_url('reports/payment_history'); ?>"><?php _trans('payment_history'); ?></a>
+                              </li> 
+                               <li><a class="nav-link" href="<?php echo base_url('reports/sales_by_client'); ?>"><?php _trans('sales_by_client'); ?></a>
+                              </li> 
+                              <li><a class="nav-link" href="<?php echo base_url('reports/sales_by_year'); ?>"><?php _trans('sales_by_date'); ?></a>
+                              </li>  
+                        </ul>
+                 </li>
+
+                 <li class="nav-item dropdown">
+                    <a href="#" class="nav-link has-dropdown"><i class="fa fa-cogs"></i><span><?php _trans('system_settings'); ?></span></a>
+                        <ul class="dropdown-menu">
+                              <li><a class="nav-link" href="<?php echo base_url('custom_fields/index'); ?>"><?php _trans('custom_fields'); ?></a>
+                              </li>  
+                              <li><a class="nav-link" href="<?php echo base_url('email_templates/index'); ?>"><?php _trans('email_templates'); ?></a>
+                              </li> 
+                               <li><a class="nav-link" href="<?php echo base_url('invoice_groups/index'); ?>"><?php _trans('invoice_groups'); ?></a>
+                              </li> 
+                              <li><a class="nav-link" href="<?php echo base_url('invoices/archive'); ?>"><?php _trans('invoice_archive'); ?></a>
+                              </li> 
+                              <li><a class="nav-link" href="<?php echo base_url('item_lookups/index'); ?>"><?php _trans('item_lookups'); ?></a>
+                              </li>  
+                               <li><a class="nav-link" href="<?php echo base_url('tax_rates/index'); ?>"><?php _trans('tax_rates'); ?></a>
+                              </li>  
+                                <li><a class="nav-link" href="<?php echo base_url('settings'); ?>"><?php _trans('system_settings'); ?></a>
+                              </li>  
+                                <li><a class="nav-link" href="<?php echo base_url('import'); ?>"><?php _trans('import_data'); ?></a>
+                              </li>  
+                        </ul>
+                 </li>
+             
+            </ul>
+        </aside>
+>>>>>>> Stashed changes

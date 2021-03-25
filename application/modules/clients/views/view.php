@@ -45,10 +45,13 @@
 ?>
 <div class="page-container">
 <div id="headerbar">
-    <h1 class="headerbar-title"><?php _htmlsc(format_client($client)); ?></h1>
+    <div class="row">
+        <div class="col-8">
+             <h1 class="headerbar-title"><?php _htmlsc(format_client($client)); ?></h1>
+        </div>
 
-    <div class="headerbar-item pull-right">
-        <div class="btn-group btn-group-sm">
+        <div class="col-4">
+             <div class="btn-group btn-group-sm">
             <a href="#" class="btn btn-default client-create-quote"
                data-client-id="<?php echo $client->client_id; ?>" data-toggle="modal" data-target="#create-quote">
                 <i class="fa fa-file"></i> <?php _trans('create_quote'); ?>
@@ -70,9 +73,18 @@
                 <i class="fa fa-trash-o"></i> <?php _trans('delete'); ?>
             </a>
         </div>
+        </div>
+
     </div>
+  
 
 </div>
+<style type="text/css">
+    body .tab_margin {
+    padding: 7px !important;
+    font-size: 17px !important;
+}
+</style>
 
 <ul id="submenu" class="nav nav-tabs nav-tabs-noborder">
     <li class="active tab_margin"><a data-toggle="tab" href="#clientDetails"><?php _trans('details'); ?></a></li>
