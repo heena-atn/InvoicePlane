@@ -13,6 +13,7 @@ if (!defined('BASEPATH')) exit('No direct script access allowed');
 /**
  * Class Ajax
  */
+
 class Ajax extends Admin_Controller
 {
 
